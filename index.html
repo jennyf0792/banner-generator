@@ -3,10 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <script></script>
+    <script>
+      $(function(){
+        
+        var name = $('#name').val();
+        var favcolor = $('#favcolor').val();
+        var color = $('#color').val();
+        var gender = $('#gender').val();
+        
+        
+      });
+    </script>
   </head>
   <body>
-     Name: <input><br>
-     Favorite Color: <input>
-  </body>
+     Name: <br><input id = "name"><br><br>
+     Favorite Color: <br><input id = "favcolor"><br><br>
+     Color You Don't Like: <br><input id = "color"><br><br>
+     Descriptive Word(s): <br>
+     <input type="checkbox" id="word">Awesome<br>
+     <input type="checkbox" id="word2">Amazing<br><br>
+     Gender: <br>
+     <input type="radio" id="male" value="male">Male
+     <input type="radio" id="female" value="female">Female
+     <input type="radio" id="agender" value="agender">Agender<br><br>
+     
+     <button id="submit">Submit</button>
+  </body> 
 </html>
