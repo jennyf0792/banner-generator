@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Banner Generator</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <style>
+        #banner {
+        background-image: cover;
+        height: 650px;
+        }
+    </style>
     <script>
       $(function(){
         
@@ -18,16 +24,24 @@
           $('#generate').click(function(){
             var name = $('#name').val();
             var favcolor = $('#favcolor').val();
-            var font = $('#fonts').val();
+            
+            var font = $('#font').val();
+            $('#banner').css('font-family', font);
+            
               $('#banner').css('border', "solid 10px black");
               $('h1').css('color', favcolor);
-              $('h1').html(name)
+              $('h1').html(name);
+              $('h2').html("TOTALLY LOVING YOUR BANNER!");
+              $('h2').css('color', 'white');
+              
+            var img = $('input[name="theme"]:checked').val();
+              $('#banner').css('background-image', "url("+img+")");
           });
         
-           $('h4').mouseenter(function(){
+           $('h3').mouseenter(function(){
               $(this).css("color", "blue"); 
            });
-            $('h4').mouseleave(function(){
+            $('h3').mouseleave(function(){
              $(this).css("color", "black");
           });
 
@@ -36,21 +50,22 @@
     </script>
   </head>
   <body>
-    <h4>Generate Your Banner Now!</h4>
-     Name: <br><input id="name" required> <br><br>
-     Favorite Color: <br><input id = "favcolor" required> <br><br>
+    <h3>Generate Your Banner Now!</h3>
+     Name: <br><input id="name" placeholder="Type your name!"> <br><br>
+     Favorite Color: <span>For a lighter coloration, combine the words together. Example: skyblue, lightgreen, etc</span>
+     <br><input id = "favcolor" placeholder="Your FAVORITE color" required> <br><br>
      Themes:<br>
-     <input type="radio" name="theme" checked><img src="sunset.jpg" width="200" align="middle"> Sunset Glow<Br><br>
-     <input type="radio" name="theme"><img src="water.jpg" width="200" align="middle"> Gracious Sky Water<Br><br>
-     <input type="radio" name="theme"><img src="green.jpg" width="200" align="middle">  Green Sea Turtle<br><br>
+     <input type="radio" name="theme" value="sunset.jpg"><img src="sunset.jpg" width="200" align="middle"> Sunset Glow<Br><br>
+     <input type="radio" name="theme" value="water.jpg"><img src="water.jpg" width="200" align="middle"> Gracious Sky Water<Br><br>
+     <input type="radio" name="theme" value="green.jpg"><img src="green.jpg" width="200" align="middle">  Green Sea Turtle<br><br>
      Fonts: <br>
-     <select name="themes">
-       <option value="arial" checked>Arial</option>
+     <select id="font" name="themes">
+       <option value="arial">Arial</option>
        <option value="impact">Impact</option>
        <option value="verdana">Verdana</option>
      </select><br><br>
      
-     <button type='submit' id="generate" value='submit'>Generate Banner</button>
+     <button type='submit' id="generate" value='submit'>Generate Banner</button><br><br>
      <!--Gender: <br>-->
      <!--<input type="radio" name="gender" value="male" required> Male-->
      <!--<input type="radio" name="gender" value="female">Female-->
