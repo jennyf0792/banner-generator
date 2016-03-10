@@ -7,26 +7,23 @@
     <script>
       $(function(){
         
-        var name = $('#name').val();
-        var favcolor = $('#favcolor').val();
-        var color = $('#color').val();
-        var gender = $('#gender').val();
+          var name = $('#name').val();
+          var favcolor = $('#favcolor').val();
+          var color = $('#color').val();
+          var gender = $('#gender').val();
         
-        $('#generate').click(function(){
-          $(this).css('border', "solid 10px black");
-        });
-        
-        $('h2').hover(function(){
-          //$(this).fadeOut("2000", function(){
-          $('h2').css('background-color', 'blue');  
+          $('#generate').click(function(){
+              $(this).css('border', "solid 10px black");
           });
-        });
         
-        // $('h2').mouseout(function(){
-        //   $(this).show();
-        // });
-        
-    //  });
+           $('h2').mouseenter(function(){
+              $(this).css("color", "blue"); 
+           });
+            $('h2').mouseleave(function(){
+             $(this).css("color", "black");
+          })
+
+      });
       
     </script>
   </head>
