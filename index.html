@@ -7,29 +7,37 @@
     <script>
       $(function(){
         
-          var name = $('#name').val();
-          var favcolor = $('#favcolor').val();
-          var color = $('#color').val();
-          var gender = $('#gender').val();
+          
+          
+        
+          var h1html = $('h1').html();
+            $('h2').html("You have created your " + h1html + ", click on me to see!");
+        
+          
         
           $('#generate').click(function(){
-              $(this).css('border', "solid 10px black");
+            var name = $('#name').val();
+            var favcolor = $('#favcolor').val();
+            var font = $('#fonts').val();
+              $('#banner').css('border', "solid 10px black");
+              $('h1').css('color', favcolor);
+              $('h1').html(name)
           });
         
-           $('h2').mouseenter(function(){
+           $('h4').mouseenter(function(){
               $(this).css("color", "blue"); 
            });
-            $('h2').mouseleave(function(){
+            $('h4').mouseleave(function(){
              $(this).css("color", "black");
-          })
+          });
 
       });
       
     </script>
   </head>
   <body>
-    <h2>Generate Your Banner Now!</h2>
-     Name: <br><input id = "name" required> <br><br>
+    <h4>Generate Your Banner Now!</h4>
+     Name: <br><input id="name" required> <br><br>
      Favorite Color: <br><input id = "favcolor" required> <br><br>
      Themes:<br>
      <input type="radio" name="theme" checked><img src="sunset.jpg" width="200" align="middle"> Sunset Glow<Br><br>
@@ -41,16 +49,18 @@
        <option value="impact">Impact</option>
        <option value="verdana">Verdana</option>
      </select><br><br>
+     
+     <button type='submit' id="generate" value='submit'>Generate Banner</button>
      <!--Gender: <br>-->
      <!--<input type="radio" name="gender" value="male" required> Male-->
      <!--<input type="radio" name="gender" value="female">Female-->
      <!--<input type="radio" name="gender" value="agender">Agender<br><br>-->
      
-     <div id="generate">
-       <h1></h1>
-        
+     <div id="banner"><br><br><br>
+       <h1 align="center">Banner</h1>
+       <h2 align="center"></h2>
+       
      </div>
      
-     <button type="submit" value="submit">Generate Banner</button>
   </body> 
 </html>
