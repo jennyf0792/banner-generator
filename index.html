@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Banner Generator</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
       $(function(){
         
@@ -11,22 +12,48 @@
         var color = $('#color').val();
         var gender = $('#gender').val();
         
+        $('#generate').click(function(){
+          $(this).css('border', "solid 10px black");
+        });
         
-      });
+        $('h2').hover(function(){
+          //$(this).fadeOut("2000", function(){
+          $('h2').css('background-color', 'blue');  
+          });
+        });
+        
+        // $('h2').mouseout(function(){
+        //   $(this).show();
+        // });
+        
+    //  });
+      
     </script>
   </head>
   <body>
-     Name: <br><input id = "name"><br><br>
-     Favorite Color: <br><input id = "favcolor"><br><br>
-     Color You Don't Like: <br><input id = "color"><br><br>
-     Descriptive Word(s): <br>
-     <input type="checkbox" id="word">Awesome<br>
-     <input type="checkbox" id="word2">Amazing<br><br>
-     Gender: <br>
-     <input type="radio" id="male" value="male">Male
-     <input type="radio" id="female" value="female">Female
-     <input type="radio" id="agender" value="agender">Agender<br><br>
+    <h2>Generate Your Banner Now!</h2>
+     Name: <br><input id = "name" required> <br><br>
+     Favorite Color: <br><input id = "favcolor" required> <br><br>
+     Themes:<br>
+     <input type="radio" name="theme" checked><img src="sunset.jpg" width="200" align="middle"> Sunset Glow<Br><br>
+     <input type="radio" name="theme"><img src="water.jpg" width="200" align="middle"> Gracious Sky Water<Br><br>
+     <input type="radio" name="theme"><img src="green.jpg" width="200" align="middle">  Green Sea Turtle<br><br>
+     Fonts: <br>
+     <select name="themes">
+       <option value="arial" checked>Arial</option>
+       <option value="impact">Impact</option>
+       <option value="verdana">Verdana</option>
+     </select><br><br>
+     <!--Gender: <br>-->
+     <!--<input type="radio" name="gender" value="male" required> Male-->
+     <!--<input type="radio" name="gender" value="female">Female-->
+     <!--<input type="radio" name="gender" value="agender">Agender<br><br>-->
      
-     <button id="submit">Submit</button>
+     <div id="generate">
+       <h1></h1>
+        
+     </div>
+     
+     <button type="submit" value="submit">Generate Banner</button>
   </body> 
 </html>
