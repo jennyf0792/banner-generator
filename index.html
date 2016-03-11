@@ -6,7 +6,7 @@
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <style>
         #banner {
-        background-image: cover;
+        background-image: cover; /*set the selected picture to cover the border*/
         height: 650px;
         }
     </style>
@@ -16,33 +16,33 @@
           
           
         
-          var h1html = $('h1').html();
-            $('h2').html("You have created your " + h1html + ", click 'Generate Banner' to see me!");
+          var h1html = $('h1').html(); //created a variable called h1html to change and add on the html to h2
+            $('h2').html("You have created your " + h1html + ", click 'Generate Banner' to see me!"); //added a string with h1html as a sentence
         
           
         
-          $('#generate').click(function(){
-            var name = $('#name').val();
-            var favcolor = $('#favcolor').val();
+          $('#generate').click(function(){ //generate button when clicked on
+            var name = $('#name').val(); //set variable name to id of input name
+            var favcolor = $('#favcolor').val(); //set variable favcolor to id of input favcolor
             
-            var font = $('#font').val();
-            $('#banner').css('font-family', font);
+            var font = $('#font').val(); //set variable font to id of input font
+            $('#banner').css('font-family', font); //changes the css of the font family with jquery
             
-              $('#banner').css('border', "solid 10px black");
-              $('h1').css('color', favcolor);
-              $('h1').html(name);
-              $('h2').html("TOTALLY LOVING YOUR BANNER!");
-              $('h2').css('color', 'white');
+              $('#banner').css('border', "solid 10px black"); //created a border when banner is pressed
+              $('h1').css('color', favcolor); //changes the color of h1 element once submitted by user
+              $('h1').html(name); //changes "Banner" to the name of the input from user
+              $('h2').html("TOTALLY LOVING YOUR BANNER!"); //changes html text of the h2 element to this string
+              $('h2').css('color', 'white'); //sets the color of h2 once button is clicked
               
-            var img = $('input[name="theme"]:checked').val();
+            var img = $('input[name="theme"]:checked').val(); //
               $('#banner').css('background-image', "url("+img+")");
           });
         
-           $('h3').mouseenter(function(){
-              $(this).css("color", "blue"); 
+           $('h3').mouseenter(function(){ //when the mouse is hovered on h3 (title)
+              $(this).css("color", "blue"); //changes the color to blue
            });
-            $('h3').mouseleave(function(){
-             $(this).css("color", "black");
+            $('h3').mouseleave(function(){ //when the mouse off of the title
+             $(this).css("color", "black"); //changes the color back to original color, black
           });
 
       });
